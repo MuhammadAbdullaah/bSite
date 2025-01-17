@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# db/seeds.rb
+
+20.times do |i|
+  Post.create(
+    title: "Sample Post #{i + 1}",
+    description: "This is the body content for sample post number #{i + 1}."
+  )
+end
+
+puts "Seeded 20 posts successfully!"

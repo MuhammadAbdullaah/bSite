@@ -1,0 +1,22 @@
+
+<div class="main__div">
+
+  <div class="left-side-bar"><h2>left side bar</h2></div>
+
+  <div class="post__block">
+    <h1>All Posts</h1>
+    <%if @posts.present? %>
+      <% @posts.each  do |post| %>
+        <hr>
+        <h3><%= post.title %></h3>
+        <p> <%= post.description %> </p>
+        <div class="button"><%= link_to "Show", post %></div>
+      <% end %>
+    <%else %>
+      <h1>no posts</h1>
+    <%end %>
+    </div>
+
+  <div class="right-side-bar"><h2>right side bar</h2></div>
+
+</div>

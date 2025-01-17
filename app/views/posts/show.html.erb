@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @post %>
-
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+<h1>Post Details</h1>
+<h3><%=@post.title%></h3>
+<p><%=@post.description%></p>
+</div>
+<div >
+  <div class="button">  <%= link_to "Edit",edit_post_path %> </div>
+  <div class="button">  <%= button_to "Destroy", post_path, method: :delete, data: {turbo_confirm: "Are You Sure?"} %> </div>
+  <div class="button">  <%= link_to "Bact to Posts", posts_path %> </div>
 </div>

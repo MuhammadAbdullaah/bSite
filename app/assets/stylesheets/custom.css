@@ -1,0 +1,63 @@
+
+
+.buttons {
+    align-items: center;
+    justify-content: center;
+}
+
+ p {
+    color: gray;
+}
+
+ h3 {
+    color: black;
+}
+
+ body {
+    background-color: azure;
+    height: 100vh;
+}
+
+.main__div {
+    display: flex;
+    align-items: start;
+    height: 100vh;
+}
+
+.left-side-bar {
+    background-color: burlywood;
+    width: 30%;
+    height: 50%;
+    border: 2px solid red;
+    margin-right: 5px;
+}
+
+.post__block {
+    width: 40%;
+    height: 100%;
+    border: 2px solid red;
+    background-color: white;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.right-side-bar {
+    background-color: aquamarine;
+    width: 30%;
+    height: 50%;
+    border: 2px solid red;
+    margin-left: 5px;
+}
+
+.button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+

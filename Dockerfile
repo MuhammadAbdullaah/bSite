@@ -2,8 +2,8 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t bloging .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name bloging bloging
+# docker build -t blog_site .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name blog_site blog_site
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
