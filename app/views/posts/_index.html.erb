@@ -9,10 +9,18 @@
       <% @posts.each  do |post| %>
         <hr>
         <h3><%= post.title %></h3>
+        <div>
+          <% if post.image.attached? %>
+            <%= image_tag post.image, alt: "Post Image", class: "post-image" %>
+          <% else %>
+            <p>No image available</p>
+          <% end %>
+        </div>
         <p> <%= post.description %> </p>
+
         <div class="button"><%= link_to "Show", post %></div>
       <% end %>
-    <%else %>
+    <%else %>/i>
       <h1>no posts</h1>
     <%end %>
     </div>

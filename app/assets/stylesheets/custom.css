@@ -1,4 +1,7 @@
-
+body {
+    margin: 0;
+    padding: 0;
+}
 
 .buttons {
     align-items: center;
@@ -21,7 +24,7 @@
 .main__div {
     display: flex;
     align-items: start;
-    height: 100vh;
+    height: calc(100vh - 32px);
 }
 
 .left-side-bar {
@@ -59,5 +62,17 @@
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: gray;
+    padding: 5px;
+    position: sticky;
+    top:0;
+    transition: 0.5s;
 }
 
