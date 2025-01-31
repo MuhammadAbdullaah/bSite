@@ -10,4 +10,13 @@ class User < ApplicationRecord
 
   validates :phone_number, presence: true
 
+
+  has_one :profile, dependent: :destroy
+  after_create :create_profile
+
+  private
+
+  def create_profile
+    Profile.create(user: self, full_name: self.full_name)
+    end
 end
