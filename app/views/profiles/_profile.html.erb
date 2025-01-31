@@ -1,0 +1,6 @@
+<h1><%= @profile.full_name %>'s Profile</h1>
+<p><strong>Name:</strong> <%= @profile.full_name %></p>
+<p><strong>Email:</strong> <%= current_user.email %></p>
+<p><strong>Bio:</strong> <%= @profile.bio.presence || "No bio available." %></p>
+
+<%= link_to "Edit Profile", edit_profile_path(@profile.id), class: "btn btn-primary" %>
