@@ -26,6 +26,11 @@
     <%end %>
     </div>
 
-  <div class="right-side-bar"><h2>right side bar</h2></div>
+  <div class="right-side-bar">
+    <% @users.each do |user| %>
+      <%= user.full_name %><br>
+      <%= user.full_name %><br>
+  <% end %>
+  </div>
 
 </div>
