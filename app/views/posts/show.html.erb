@@ -5,7 +5,28 @@
     <%= image_tag @post.image, alt: "Post Image", class: "post-image" %>
   </h1>
   <p><%=@post.description%></p>
+
+  <h2>Comments</h2>
+  <%if @post.comments.any?%>
+    <%= render @post.comments %>
+  <%else %>
+    <h3>No Comments</h3>
+  <% end %>
+
+
+
+  <h2>Add a comment:</h2>
+  <%= form_with model: [ @post, @post.comments.build ] do |form| %>
+    <p>
+      <%= form.label :content %><br>
+      <%= form.text_area :content %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
 </div>
+
 <div >
   <div class="button">  <%= link_to "Edit",edit_post_path %> </div>
   <div class="button">  <%= button_to "Destroy", post_path, method: :delete, data: {turbo_confirm: "Are You Sure?"} %> </div>

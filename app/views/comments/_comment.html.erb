@@ -1,0 +1,10 @@
+<p>
+  <strong><%= comment.user.full_name %>:</strong> <!-- Comment karne wale user ka email -->
+  <%= comment.content %>
+</p>
+
+<% if comment.user == current_user %> <!-- Sirf comment owner hi comment delete kar sake -->
+  <p>
+    <%= button_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
