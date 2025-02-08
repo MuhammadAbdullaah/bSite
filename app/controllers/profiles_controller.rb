@@ -6,7 +6,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
@@ -17,7 +16,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-
   private
 
   def set_profile
@@ -27,5 +25,4 @@ class ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:image, :full_name, :bio)
   end
-
 end
