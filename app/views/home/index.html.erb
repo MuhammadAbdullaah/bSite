@@ -1,10 +1,18 @@
 <div class="buttons">
   <% if current_user.present? %>
-    <p> Welcome Dear <%= current_user.full_name %></p>
-    <div class="button">   <p> <%= link_to "SocialApp", posts_path %></p></div>
-    <div class="button">  <%= button_to "LogOut", destroy_user_session_path, method: :delete  %></div>
-    <% else %>
-  <div class="button"><%=link_to "Login", new_user_session_path%></div>
-    <div class="button">  <%= link_to "SignUp", new_user_registration_path %></div>
+    <p class="welcome">Welcome Dear <%= current_user.full_name %></p>
+    <div class="button">
+      <p><%= link_to "SocialApp", posts_path %></p>
+    </div>
+    <div class="button">
+      <%= button_to "LogOut", destroy_user_session_path, method: :delete %>
+    </div>
+  <% else %>
+    <div class="button">
+      <%= link_to "Login", new_user_session_path %>
+    </div>
+    <div class="button">
+      <%= link_to "SignUp", new_user_registration_path %>
+    </div>
   <% end %>
 </div>
