@@ -1,36 +1,44 @@
-
 <div class="main__div">
 
+  <!-- Left Sidebar: Profile -->
   <div class="left-side-bar">
-    <%= render "profiles/profile", profile: @profile %>  </div>
+    <%= render "profiles/profile", profile: @profile %>
+  </div>
 
+  <!-- Center Block: Posts -->
   <div class="post__block">
     <h1>All Posts</h1>
-    <%if @posts.present? %>
-      <% @posts.each  do |post| %>
-        <hr>
-        <h3><%= post.title %></h3>
-        <div>
-          <% if post.image.attached? %>
-            <%= image_tag post.image, alt: "Post Image", class: "post-image" %>
-          <% else %>
-            <p>No image available</p>
-          <% end %>
+    <% if @posts.present? %>
+      <% @posts.each do |post| %>
+        <div class="post">
+          <hr>
+          <h3><%= post.title %></h3>
+          <div class="post__image">
+            <% if post.image.attached? %>
+              <%= image_tag post.image, alt: "Post Image", class: "post-image" %>
+            <% else %>
+              <p>No image available</p>
+            <% end %>
+          </div>
+          <p class="post__description"><%= post.description %></p>
+          <div class="button">
+            <%= link_to "Show", post %>
+          </div>
         </div>
-        <p> <%= post.description %> </p>
-
-        <div class="button"><%= link_to "Show", post %></div>
       <% end %>
-    <%else %>/i>
-      <h1>no posts</h1>
-    <%end %>
-    </div>
+    <% else %>
+      <h1>No posts</h1>
+    <% end %>
+  </div>
 
+  <!-- Right Sidebar: Users List -->
   <div class="right-side-bar">
+    <h2>Users</h2>
     <% @users.each do |user| %>
-      <%= user.full_name %><br>
-      <%= user.full_name %><br>
-  <% end %>
+      <div class="user">
+        <p><%= user.full_name %></p>
+      </div>
+    <% end %>
   </div>
 
 </div>
